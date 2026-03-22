@@ -11,5 +11,6 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-rootProject.name = 'TLVParsing-library'
+rootProject.name = 'tlvparsing-library'
 include('lib')
+project(':lib').name = 'tlvparsing-library'

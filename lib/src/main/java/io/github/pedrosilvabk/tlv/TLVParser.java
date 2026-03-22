@@ -1,9 +1,10 @@
 package io.github.pedrosilvabk.tlv;
 
-import org.example.registry.CodecRegistry;
-import org.example.registry.ObjectTLVCodec;
-import org.example.registry.ValueTLVCodec;
-import org.example.utils.TLVUtils;
+
+import io.github.pedrosilvabk.registry.CodecRegistry;
+import io.github.pedrosilvabk.registry.ObjectTLVCodec;
+import io.github.pedrosilvabk.registry.ValueTLVCodec;
+import io.github.pedrosilvabk.utils.TLVUtils;
 
 public class TLVParser {
     private final CodecRegistry codecRegistry;
