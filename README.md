@@ -23,8 +23,8 @@ Add the dependency to your `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'io.github.pedrosilvabk:tlvparsing-library:1.0.0'
-    annotationProcessor 'io.github.pedrosilvabk:tlvparsing-library:1.0.0'
+    implementation 'io.github.pedrosilvabk:tlvmapper:1.0.0'
+    annotationProcessor 'io.github.pedrosilvabk:tlvmapper:1.0.0'
 }
 ```
 
