@@ -13,6 +13,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+      
       - name: Publish snapshot
         run: ./gradlew publishToMavenCentral --no-configuration-cache
         env:
