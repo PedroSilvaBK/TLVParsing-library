@@ -37,10 +37,18 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+    - name: Derive version from the release tag
+      run: echo "RELEASE_VERSION=${TAG_NAME#v}" >> "$GITHUB_ENV"
+      env:
+        TAG_NAME: ${{ github.event.release.tag_name }}
+
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish
-      run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
+      run: >
+        ./gradlew publishAndReleaseToMavenCentral
+        -PreleaseVersion=${{ env.RELEASE_VERSION }}
+        --no-configuration-cache
       env:
         ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
         ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
