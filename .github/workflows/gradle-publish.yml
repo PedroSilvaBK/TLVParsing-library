@@ -9,7 +9,8 @@ name: Gradle Package
 
 on:
   release:
-    types: [created]
+    types: [published]    # runs when you publish a GitHub Release
+  workflow_dispatch: {}   # ...and lets you trigger it manually
 
 jobs:
   build:
